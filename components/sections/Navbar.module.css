@@ -1,0 +1,244 @@
+.wrap {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 20;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 18px 80px;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  height: 44px;
+}
+
+.logo {
+  position: relative;
+  z-index: 2;
+}
+
+/* Menu is optically centered like the Framer layout (centerX 48%) */
+.menu {
+  position: absolute;
+  left: 49%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  color: var(--mint-65);
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+  padding: 4px 0;
+  transition: color 0.3s var(--ease-out);
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--mint);
+}
+
+.caret {
+  display: inline-flex;
+  margin-left: 1px;
+}
+
+/* ---------- Dropdown ---------- */
+
+.dropdown {
+  position: relative;
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  translate: -50% 0;
+  width: 280px;
+  padding: 8px;
+  border-radius: 14px;
+  background: rgba(12, 29, 29, 0.97);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 0 0 1px var(--dark-cyan),
+    0 24px 48px -12px rgba(0, 0, 0, 0.6);
+  transform-origin: 50% 0;
+}
+
+/* Hover bridge so the panel doesn't close while moving the pointer down */
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: -16px 0 auto 0;
+  height: 16px;
+}
+
+.panelLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  transition: background-color 0.25s var(--ease-out);
+}
+
+.panelLink strong {
+  display: block;
+  color: var(--mint);
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.panelLink small {
+  display: block;
+  margin-top: 2px;
+  color: var(--mint-65);
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.panelArrow {
+  color: var(--primary);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition:
+    opacity 0.25s var(--ease-out),
+    transform 0.25s var(--ease-out);
+}
+
+.panelLink:hover,
+.panelLink:focus-visible {
+  background: var(--slate);
+}
+
+.panelLink:hover .panelArrow,
+.panelLink:focus-visible .panelArrow {
+  opacity: 1;
+  transform: none;
+}
+
+.cta {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- Mobile ---------- */
+
+.burger {
+  position: relative;
+  z-index: 2;
+  display: none;
+  width: 40px;
+  height: 40px;
+  margin-right: -8px;
+}
+
+.burger span {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 2px;
+  border-radius: 10px;
+  background: var(--mint);
+}
+
+.burger span:first-child {
+  top: 14px;
+}
+
+.burger span:last-child {
+  top: 24px;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .nav {
+    padding: 18px 20px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .menu,
+  .cta {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .mobile {
+    position: absolute;
+    top: 72px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 8px 20px 20px;
+    border-radius: 16px;
+    background: var(--rich-teal);
+    box-shadow:
+      0 0 0 1px var(--dark-cyan),
+      0 24px 48px -12px rgba(0, 0, 0, 0.7);
+    transform-origin: 50% 0;
+  }
+
+  .mobile ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile li:last-child a {
+    border-bottom: 0;
+  }
+
+  .mobile li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--mint-12);
+    color: var(--mint);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 810px) {
+  .mobile {
+    left: auto;
+    right: 20px;
+    width: 360px;
+  }
+}
+
+@media (max-width: 809px) {
+  .nav {
+    padding: 16px;
+  }
+}

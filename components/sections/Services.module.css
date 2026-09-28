@@ -1,0 +1,193 @@
+.container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.title {
+  max-width: 890px;
+}
+
+.lede {
+  max-width: 470px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  max-width: 384px;
+  padding: 0 19.5px;
+}
+
+/* Dashed guide frame with plus marks at each corner (Framer "Line Wrap") */
+.frame {
+  --dash: rgba(220, 229, 223, 0.12);
+  position: absolute;
+  inset: -9px 9px -10px 9px;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(90deg, var(--dash) 0 4px, transparent 4px 8px) top / 100% 1px no-repeat,
+    repeating-linear-gradient(90deg, var(--dash) 0 4px, transparent 4px 8px) bottom / 100% 1px no-repeat,
+    repeating-linear-gradient(180deg, var(--dash) 0 4px, transparent 4px 8px) left / 1px 100% no-repeat,
+    repeating-linear-gradient(180deg, var(--dash) 0 4px, transparent 4px 8px) right / 1px 100% no-repeat;
+}
+
+.frame i {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  background: var(--bg)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 19'%3E%3Cpath d='M9.5 4v11M15 9.5H4' stroke='%232E5649' fill='none'/%3E%3C/svg%3E");
+}
+
+.frame i:nth-child(1) {
+  top: -9px;
+  left: -9px;
+}
+
+.frame i:nth-child(2) {
+  top: -9px;
+  right: -9px;
+}
+
+.frame i:nth-child(3) {
+  bottom: -9px;
+  left: -9px;
+}
+
+.frame i:nth-child(4) {
+  bottom: -9px;
+  right: -9px;
+}
+
+/* Cursor spotlight painted over the card surface */
+.glow {
+  position: absolute;
+  z-index: 1;
+  inset: 0 19.5px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  padding: 28px;
+  border-radius: 8px;
+  background: var(--rich-teal);
+}
+
+.content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--ink-70);
+  border-radius: inherit;
+  pointer-events: none;
+  transition: border-color 0.4s var(--ease-out);
+}
+
+.card:hover .content::after {
+  border-color: rgba(16, 178, 97, 0.45);
+}
+
+.textWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.iconWrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background: var(--slate);
+  color: var(--primary);
+}
+
+.iconWrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--mint-12);
+  border-radius: inherit;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heading h3 {
+  color: var(--mint);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 0.5px solid var(--mint-12);
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 1199px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 809px) {
+  .container {
+    gap: 40px;
+  }
+
+  .card {
+    padding: 0 10px;
+  }
+
+  .frame {
+    inset: -9px 0 -10px 0;
+  }
+
+  .glow {
+    inset: 0 10px;
+  }
+
+  .content {
+    padding: 24px;
+  }
+}

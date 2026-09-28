@@ -1,0 +1,520 @@
+/* Light product UI inside the hero frame (authored at 980×602). */
+
+.app {
+  --d-ink: #0a281f;
+  --d-muted: rgba(10, 40, 31, 0.56);
+  --d-line: #e3eae6;
+  --d-soft: #eef3f0;
+  --d-green: #10b261;
+  --d-green-ink: #0a8f4c;
+  display: grid;
+  grid-template-columns: 188px 1fr;
+  width: 980px;
+  height: 602px;
+  background: #f6f9f7;
+  color: var(--d-ink);
+  text-align: left;
+  letter-spacing: -0.01em;
+  user-select: none;
+}
+
+/* ---------- Sidebar ---------- */
+
+.side {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 14px 16px 22px;
+  background: var(--d-soft);
+  border-right: 1px solid #e1e8e4;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 6px;
+  margin-bottom: 26px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.sideLabel {
+  padding: 0 10px;
+  margin-bottom: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(10, 40, 31, 0.42);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(10, 40, 31, 0.62);
+}
+
+.nav .navActive {
+  background: #fff;
+  color: var(--d-ink);
+  box-shadow:
+    0 0 0 1px var(--d-line),
+    0 1px 2px rgba(10, 40, 31, 0.06);
+}
+
+.navActive svg {
+  color: var(--d-green);
+}
+
+.navBadge {
+  margin-left: auto;
+  padding: 1px 6px;
+  border-radius: 20px;
+  background: rgba(16, 178, 97, 0.14);
+  color: var(--d-green-ink);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.workspace {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--d-line);
+}
+
+.wsAvatar {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--d-ink);
+  color: #f6f9f7;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.workspace strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.workspace small {
+  display: block;
+  font-size: 10.5px;
+  color: var(--d-muted);
+}
+
+/* ---------- Main ---------- */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  padding: 22px 32px 22px 24px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2px;
+}
+
+.h {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.sub {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 5px;
+  font-size: 11.5px;
+  color: var(--d-muted);
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--d-green);
+  box-shadow: 0 0 0 3px rgba(16, 178, 97, 0.18);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seg {
+  display: flex;
+  padding: 3px;
+  border-radius: 8px;
+  background: #e9efeb;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--d-muted);
+}
+
+.seg span {
+  padding: 5px 9px;
+  border-radius: 6px;
+}
+
+.seg .segOn {
+  background: #fff;
+  color: var(--d-ink);
+  box-shadow: 0 1px 2px rgba(10, 40, 31, 0.1);
+}
+
+.export {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--d-ink);
+  color: #f6f9f7;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow:
+    0 0 0 1px var(--d-line),
+    0 1px 2px rgba(10, 40, 31, 0.04);
+}
+
+/* KPIs */
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.kpis .card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px 13px;
+}
+
+.kLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--d-muted);
+}
+
+.kValue {
+  font-size: 25px;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+
+.delta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 20px;
+  background: rgba(16, 178, 97, 0.12);
+  color: var(--d-green-ink);
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+/* Chart + share */
+
+.row {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 14px;
+  min-height: 0;
+}
+
+.chartCard {
+  position: relative;
+  padding: 14px 16px 10px;
+}
+
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 18px;
+  margin-bottom: 10px;
+}
+
+.cardTitle {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.muted {
+  font-size: 11px;
+  color: var(--d-muted);
+}
+
+.legend {
+  display: flex;
+  gap: 10px;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: rgba(10, 40, 31, 0.6);
+}
+
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.chart {
+  display: block;
+  overflow: visible;
+}
+
+.axis {
+  font-size: 9.5px;
+  fill: rgba(10, 40, 31, 0.45);
+  font-family: inherit;
+}
+
+.tip {
+  position: absolute;
+  translate: 0 -100%;
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: var(--d-ink);
+  color: #f6f9f7;
+  font-size: 10.5px;
+  white-space: nowrap;
+  box-shadow: 0 6px 14px -4px rgba(10, 40, 31, 0.35);
+}
+
+.tip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 1px;
+}
+
+.tip strong {
+  font-weight: 600;
+  color: #8bd9b0;
+}
+
+.shareCard {
+  padding: 14px 16px;
+}
+
+.share {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.share li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shareIcon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--d-soft);
+  color: var(--d-ink);
+}
+
+.shareMain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.shareTop {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.shareTop strong {
+  font-weight: 600;
+}
+
+.bar {
+  height: 5px;
+  border-radius: 5px;
+  background: #e9efeb;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #10b261, #3bd68a);
+  transform-origin: left center;
+}
+
+/* Live citation feed */
+
+.feed {
+  position: relative;
+  padding: 14px 16px;
+  height: 84px;
+  overflow: hidden;
+}
+
+.feedInner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 100%;
+  padding-right: 18px;
+}
+
+.feedDots {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transform: translateY(-50%);
+}
+
+.feedDots span {
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--d-line);
+  transition:
+    height 0.4s var(--ease-out),
+    background-color 0.4s var(--ease-out);
+}
+
+.feedDots .feedDotOn {
+  height: 12px;
+  background: var(--d-green);
+}
+
+.feedIcon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--d-ink);
+  color: #8bd9b0;
+}
+
+.feedBody {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.feedMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--d-muted);
+}
+
+.newTag {
+  padding: 2px 7px;
+  border-radius: 20px;
+  background: rgba(16, 178, 97, 0.12);
+  color: var(--d-green-ink);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.quote {
+  font-size: 12.5px;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.quote mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: rgba(16, 178, 97, 0.18);
+  color: inherit;
+}
+
+.rank {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-left: 16px;
+  border-left: 1px solid var(--d-line);
+  color: var(--d-green);
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.rank small {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--d-muted);
+}

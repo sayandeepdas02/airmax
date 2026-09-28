@@ -1,0 +1,80 @@
+.backdrop {
+  --line: rgba(16, 178, 97, 0.075);
+  --tile: rgba(38, 170, 112, 0.085);
+  --mask: radial-gradient(ellipse 48% 44% at 50% 42%, #000 30%, transparent 100%);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.hero {
+  background: linear-gradient(
+    180deg,
+    #09251d 0%,
+    #09251d 16%,
+    #081e18 40%,
+    #071714 60%,
+    #06110f 80%,
+    #060e0e 100%
+  );
+}
+
+.footer {
+  --mask: radial-gradient(ellipse 50% 46% at 50% 44%, #000 25%, transparent 100%);
+  --line: rgba(16, 178, 97, 0.06);
+  --tile: rgba(38, 170, 112, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(6, 14, 14, 0) 0%,
+    #060f0f 10%,
+    #061412 36%,
+    #071915 55%,
+    #081f19 74%,
+    #08211b 100%
+  );
+}
+
+.cta {
+  --line: rgba(255, 255, 255, 0.045);
+  --tile: rgba(255, 255, 255, 0.075);
+  --mask: radial-gradient(ellipse 62% 70% at 50% 30%, #000 35%, transparent 100%);
+  background: linear-gradient(180deg, #20b66b 0%, #0fa259 25%, #0d8c4d 50%, #096a3a 76%, #085931 100%);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: var(--cell) var(--cell);
+  background-position: calc(50% + var(--cell) / 2) 0;
+  mask-image: var(--mask);
+  -webkit-mask-image: var(--mask);
+}
+
+.hero .grid {
+  top: 40px;
+}
+
+.tile {
+  position: absolute;
+  left: calc(50% + var(--c) * var(--cell));
+  top: calc(var(--r) * var(--cell));
+  width: var(--cell);
+  height: var(--cell);
+  background: var(--tile);
+}
+
+/* Cursor spotlight: soft glow + a brighter grid revealed through a moving mask */
+.spotGlow {
+  position: absolute;
+  inset: 0;
+}
+
+.spotGrid {
+  --line: rgba(0, 245, 123, 0.22);
+}

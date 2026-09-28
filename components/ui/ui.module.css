@@ -1,0 +1,155 @@
+/* ---------- Logo ---------- */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--mint);
+}
+
+.logoMark {
+  flex: none;
+  color: var(--primary);
+}
+
+.logoWord {
+  font-size: 23px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  transform: translateY(-1px);
+}
+
+/* ---------- Rolling text (letters roll up on hover, staggered) ---------- */
+
+.roll {
+  --roll-lh: 18px;
+  display: inline-flex;
+  overflow: hidden;
+  height: var(--roll-lh);
+  line-height: var(--roll-lh);
+  text-shadow: 0 var(--roll-lh) 0 var(--roll-color, currentColor);
+  user-select: none;
+}
+
+.roll span {
+  display: block;
+  white-space: pre;
+  flex-shrink: 0;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  --btn-bg: var(--mint);
+  --btn-fg: var(--ink);
+  --btn-fg-next: var(--mint);
+  --btn-border: var(--ink-70);
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 32px;
+  border-radius: 100px;
+  overflow: hidden;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-size: 16px;
+  line-height: 17.6px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: background-color 0.45s var(--ease-out);
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--btn-border);
+  border-radius: inherit;
+  pointer-events: none;
+  transition: border-color 0.45s var(--ease-out);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  --btn-bg: var(--primary);
+  --btn-border: rgba(0, 245, 123, 0.35);
+}
+
+.btnLabel {
+  position: relative;
+  display: block;
+  height: 17.6px;
+}
+
+.btnText {
+  display: block;
+}
+
+.btnTextNext {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--btn-fg-next);
+}
+
+.btnLight {
+  box-shadow: var(--shadow-glow-btn);
+}
+
+.btnDark {
+  --btn-bg: var(--deep-jungle);
+  --btn-fg: var(--mint);
+  --btn-border: var(--dark-cyan);
+}
+
+.btnSmall {
+  padding: 10px 20px;
+}
+
+.btnBlock {
+  width: 100%;
+}
+
+/* ---------- Pill (Framer "Subtext") ---------- */
+
+.pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 12px;
+  border-radius: 100px;
+  background: var(--rich-teal);
+  color: var(--primary);
+  font-size: 14px;
+  line-height: 19.6px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.pill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 0.5px solid var(--ink-70);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* ---------- Check icon ---------- */
+
+.check {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+}

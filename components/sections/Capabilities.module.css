@@ -1,0 +1,580 @@
+.container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.lede {
+  max-width: 520px;
+}
+
+/* ---------- Bento grid ---------- */
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 420px;
+  padding: 24px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, var(--rich-teal) 0%, #0a1818 100%);
+  overflow: hidden;
+}
+
+.tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--ink-70);
+  border-radius: inherit;
+  pointer-events: none;
+  transition: border-color 0.4s var(--ease-out);
+}
+
+.tile:hover::after {
+  border-color: rgba(16, 178, 97, 0.45);
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.visual {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-height: 230px;
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 440px;
+}
+
+.copy h3 {
+  color: var(--mint);
+}
+
+/* Shared "app panel" surface used by the demos */
+.chat,
+.code,
+.serp {
+  width: 100%;
+  border-radius: 12px;
+  background: #081414;
+  box-shadow:
+    0 0 0 1px var(--mint-12),
+    0 24px 48px -24px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+/* ---------- 1. Answer engine demo ---------- */
+
+.chat {
+  max-width: 760px;
+}
+
+.chatBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--mint-12);
+}
+
+.dots {
+  display: flex;
+  gap: 5px;
+}
+
+.dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mint-12);
+}
+
+.tabs {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 10px;
+  background: rgba(246, 249, 247, 0.04);
+}
+
+.tab {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 11px;
+  border-radius: 7px;
+  color: var(--mint-65);
+  font-size: 12.5px;
+  font-weight: 500;
+  transition: color 0.25s var(--ease-out);
+}
+
+.tab[aria-selected="true"],
+.tab:hover {
+  color: var(--mint);
+}
+
+.tabPill {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 7px;
+  background: var(--deep-jungle);
+  box-shadow: inset 0 0 0 1px var(--dark-cyan);
+}
+
+.chatBody {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 210px;
+  padding: 18px;
+}
+
+.userMsg {
+  align-self: flex-end;
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px 14px 4px 14px;
+  background: var(--deep-jungle);
+  color: var(--mint);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.aiMsg {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.aiIcon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(16, 178, 97, 0.14);
+  color: var(--neon);
+}
+
+.aiContent {
+  flex: 1;
+  min-height: 116px;
+}
+
+.answerText {
+  color: var(--mint-85);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.answerText mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: rgba(16, 178, 97, 0.22);
+  color: #b9f5d4;
+}
+
+.caret {
+  display: inline-block;
+  width: 7px;
+  height: 15px;
+  margin-left: 2px;
+  border-radius: 1px;
+  background: var(--primary);
+  vertical-align: -2px;
+}
+
+.sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.sources li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(246, 249, 247, 0.05);
+  box-shadow: inset 0 0 0 1px var(--mint-12);
+  color: var(--mint-65);
+  font-size: 12px;
+}
+
+.sources .sourceOn {
+  background: rgba(16, 178, 97, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(16, 178, 97, 0.4);
+  color: var(--mint);
+}
+
+.sourceNum {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* ---------- 2. Core Web Vitals ---------- */
+
+.vitals {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.scoreNum {
+  color: var(--primary);
+  font-size: 56px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+
+.scoreLabel {
+  color: var(--mint-65);
+  font-size: 13px;
+}
+
+.rings {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.ring {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ringValue {
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--mint);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.ringLabel {
+  color: var(--mint-65);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ringLabel em {
+  margin-left: 3px;
+  color: var(--primary);
+  font-style: normal;
+}
+
+/* ---------- 3. Schema code ---------- */
+
+.code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.codeHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--mint-12);
+  color: var(--mint-65);
+  font-size: 12px;
+}
+
+.valid {
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(16, 178, 97, 0.12);
+  color: var(--primary);
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.code pre {
+  margin: 0;
+  padding: 12px 0;
+  font: inherit;
+  font-size: 12.5px;
+  line-height: 1.8;
+}
+
+.codeLine {
+  display: block;
+  padding-right: 14px;
+  white-space: pre;
+}
+
+.ln {
+  display: inline-block;
+  width: 28px;
+  margin-right: 14px;
+  text-align: right;
+  color: rgba(246, 249, 247, 0.22);
+}
+
+.c_k {
+  color: #8bd9b0;
+}
+
+.c_s {
+  color: #f1d38a;
+}
+
+.c_p {
+  color: var(--mint-65);
+}
+
+/* ---------- 4. SERP climb ---------- */
+
+.serp {
+  padding: 12px;
+}
+
+.serpSearch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 9px 12px;
+  border-radius: 20px;
+  background: rgba(246, 249, 247, 0.05);
+  color: var(--mint-85);
+  font-size: 12.5px;
+}
+
+.serp ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.serp li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 9px;
+  background: rgba(246, 249, 247, 0.03);
+}
+
+.serp .serpYou {
+  z-index: 1;
+  background: rgba(16, 178, 97, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(16, 178, 97, 0.45);
+}
+
+.serpRank {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: rgba(246, 249, 247, 0.06);
+  color: var(--mint-65);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.serpYou .serpRank {
+  background: var(--primary);
+  color: var(--ink);
+}
+
+.serpMain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.serpDomain {
+  color: var(--mint-85);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.serpLine {
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(246, 249, 247, 0.1);
+}
+
+.serpYou .serpLine {
+  background: rgba(16, 178, 97, 0.45);
+}
+
+.serpUp {
+  padding: 2px 7px;
+  border-radius: 20px;
+  background: rgba(0, 245, 123, 0.12);
+  color: var(--neon);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ---------- 5. Mentions orbit ---------- */
+
+.mentions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.orbit {
+  position: relative;
+}
+
+.orbit svg {
+  position: absolute;
+  inset: 0;
+}
+
+.node {
+  position: absolute;
+  padding: 4px 9px;
+  border-radius: 20px;
+  background: #0b2019;
+  box-shadow: inset 0 0 0 1px rgba(16, 178, 97, 0.35);
+  color: var(--mint-85);
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.hub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+  border-radius: 14px;
+  background: var(--primary);
+  color: var(--mint);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.mentionStat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.mentionStat strong {
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.mentionStat span {
+  color: var(--mint-65);
+  font-size: 13px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1199px) {
+  .bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 809px) {
+  .container {
+    gap: 40px;
+  }
+
+  .bento {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .wide {
+    grid-column: auto;
+  }
+
+  .tile {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .chatBar .dots {
+    display: none;
+  }
+
+  .tab {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .chatBody {
+    padding: 14px;
+  }
+}
