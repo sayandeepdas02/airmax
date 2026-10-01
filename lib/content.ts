@@ -34,7 +34,6 @@ export const nav = {
 };
 
 export const hero = {
-  pill: { strong: "40+ startups", rest: "growing with AirMax" }, // TODO: confirm client count
   titleBefore: "Make your startup the",
   titleAccent: "answer",
   titleAfter: "AI recommends",
