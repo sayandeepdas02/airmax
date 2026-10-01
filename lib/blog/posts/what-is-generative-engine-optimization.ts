@@ -36,6 +36,7 @@ export const whatIsGeo: Post = {
     {
       t: "figure",
       src: "/blog/what-is-generative-engine-optimization-figure.svg",
+      visual: "pipeline",
       alt: "Pipeline diagram showing three stages of a generative engine: retrieval of sources, synthesis of an answer, and citation of selected sources",
       caption: "The three stages of a generative answer, and the lever you control at each.",
     },

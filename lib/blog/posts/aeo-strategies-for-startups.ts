@@ -31,6 +31,7 @@ export const aeoStrategies: Post = {
     {
       t: "figure",
       src: "/blog/aeo-strategies-for-startups-figure.svg",
+      visual: "audit-dashboard",
       alt: "Seven-step ladder listing answer-first content, schema, content clusters, question targeting, credibility signals, AI audits and freshness, ordered from quick wins to compounding habits",
       caption: "Seven AEO strategies, from quick wins to compounding habits.",
     },

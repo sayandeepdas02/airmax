@@ -36,6 +36,7 @@ export const whatIsAeo: Post = {
     {
       t: "figure",
       src: "/blog/what-is-answer-engine-optimization-figure.svg",
+      visual: "question-to-answer",
       alt: "Flow diagram showing a buyer question going to an answer engine, which retrieves sources and returns a synthesized answer that cites a brand",
       caption: "How an answer engine turns a question into a cited answer.",
     },
