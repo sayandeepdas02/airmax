@@ -296,7 +296,7 @@ export const footer = {
     { label: "YouTube", href: "https://www.youtube.com/", icon: "youtube" },
   ], // TODO: point to AirMax profiles
   legal: [
-    { label: "Privacy Policy", href: "#" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of Service", href: "#" },
   ],
 } as const;
