@@ -1,4 +1,4 @@
-import { faq } from "@/lib/content";
+import { faq, site } from "@/lib/content";
 import { Pill } from "@/components/ui/primitives";
 import { Button } from "@/components/ui/Interactive";
 import { Reveal } from "@/components/motion/Motion";
@@ -27,7 +27,7 @@ export function Faq() {
             <span className={styles.asideGlow} aria-hidden="true" />
             <p className={styles.asideTitle}>{faq.aside.title}</p>
             <p className="t-body-16 muted">{faq.aside.body}</p>
-            <Button href="#contact" size="small">
+            <Button href={site.bookingUrl} size="small">
               {faq.aside.cta}
             </Button>
           </Reveal>

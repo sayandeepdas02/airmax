@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { cta, footer, site } from "@/lib/content";
+import { cta, footer } from "@/lib/content";
 import { Logo, LogoMark } from "@/components/ui/primitives";
 import { Button, RollLink } from "@/components/ui/Interactive";
 import { SocialIcon } from "@/components/ui/icons";
@@ -10,8 +10,6 @@ import { NewsletterForm } from "./NewsletterForm";
 import styles from "./Footer.module.css";
 
 type Vars = CSSProperties & Record<`--${string}`, string | number>;
-
-const auditHref = `mailto:${site.email}?subject=${encodeURIComponent("Free AI visibility audit")}`;
 
 export function Footer() {
   return (
@@ -44,7 +42,7 @@ export function Footer() {
                 </div>
               </div>
               <Reveal className={styles.ctaButton} delay={0.35} y={18}>
-                <Button href={auditHref} magnetic>
+                <Button href={cta.button.href} magnetic>
                   {cta.button.label}
                 </Button>
               </Reveal>
@@ -88,7 +86,7 @@ export function Footer() {
                       <RollLink href={`mailto:${footer.contact.email}`} text={footer.contact.email} className={styles.link} />
                     </li>
                     <li>
-                      <RollLink href={footer.contact.call.href} text={footer.contact.call.label} className={styles.link} />
+                      <RollLink href={footer.contact.call.href} text={footer.contact.call.label} className={styles.link} target="_blank" rel="noopener noreferrer" />
                     </li>
                   </ul>
                   <ul className={styles.social}>
