@@ -49,6 +49,7 @@ export const aeoVsSeo: Post = {
     {
       t: "figure",
       src: "/blog/aeo-vs-seo-figure.svg",
+      visual: "serp-vs-answer",
       alt: "Diagram comparing SEO, which returns ten blue links to a user, with AEO, which returns one synthesized answer citing three sources",
       caption: "SEO returns a list of options. AEO returns one answer that names its sources.",
     },

@@ -79,7 +79,7 @@
 .prose > * + * { margin-top: 20px; }
 .prose h2 { margin-top: 56px; font-size: 32px; line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; color: var(--mint); scroll-margin-top: 24px; }
 .prose h3 { margin-top: 36px; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; color: var(--mint); }
-.prose a { color: var(--neon); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(0, 245, 123, 0.4); }
+.prose a:not([class]) { color: var(--neon); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(0, 245, 123, 0.4); }
 .prose strong { color: var(--mint); font-weight: 600; }
 .prose ul, .prose ol { padding-left: 26px; display: flex; flex-direction: column; gap: 10px; }
 .prose ul { list-style: disc; }

@@ -2,6 +2,7 @@ import type { Block } from "@/lib/blog";
 import { site } from "@/lib/content";
 import { Button } from "@/components/ui/Interactive";
 import { Inline, slugify } from "./Inline";
+import { Visual } from "./visuals/Visual";
 import styles from "./blog.module.css";
 
 export function PostBody({ blocks }: { blocks: Block[] }) {
@@ -85,6 +86,7 @@ export function PostBody({ blocks }: { blocks: Block[] }) {
               </aside>
             );
           case "figure":
+            if (b.visual) return <Visual key={i} name={b.visual} alt={b.alt} caption={b.caption} />;
             return (
               <figure key={i} className={styles.figure}>
                 <img src={b.src} alt={b.alt} width={1200} height={560} loading="lazy" decoding="async" />

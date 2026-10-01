@@ -36,6 +36,7 @@ export const seoBestPractices: Post = {
     {
       t: "figure",
       src: "/blog/seo-best-practices-figure.svg",
+      visual: "layers",
       alt: "Pyramid diagram with a foundation layer for intent, structure and technical access, a middle layer for expertise, evidence and authority, and a top layer for agentic readiness and measurement",
       caption: "Work from the bottom up: foundation, then authority, then adaptation.",
     },

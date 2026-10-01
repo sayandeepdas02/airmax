@@ -6,7 +6,7 @@ export type Block =
   | { t: "ol"; items: string[] }
   | { t: "table"; caption: string; head: string[]; rows: string[][] }
   | { t: "callout"; title: string; text: string }
-  | { t: "figure"; src: string; alt: string; caption: string }
+  | { t: "figure"; src: string; alt: string; caption: string; visual?: "serp-vs-answer" | "layers" | "question-to-answer" | "pipeline" | "audit-dashboard" }
   | { t: "cta" };
 
 export type Post = {
