@@ -14,8 +14,8 @@ export const whatIsGeo: Post = {
   dateModified: "2026-10-02",
   readMinutes: 9,
   cover: {
-    src: "/blog/what-is-generative-engine-optimization-cover.svg",
-    alt: "A three-stage pipeline of retrieval, synthesis and citation drawn as connected nodes on a dark green grid, illustrating generative engine optimization",
+    src: "/blog/what-is-generative-engine-optimization-cover.webp",
+    alt: "A red-roofed cottage among trees and hedges on a sunny green hillside, under the title What is Generative Engine Optimization",
   },
   takeaways: [
     "GEO is the practice of optimizing content and brand signals so generative AI engines include and cite you in synthesized answers.",

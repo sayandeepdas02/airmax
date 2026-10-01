@@ -14,8 +14,8 @@ export const aeoStrategies: Post = {
   dateModified: "2026-10-02",
   readMinutes: 10,
   cover: {
-    src: "/blog/aeo-strategies-for-startups-cover.svg",
-    alt: "A rising staircase of seven steps ending in a highlighted citation card on a dark green grid, representing seven AEO strategies for startups",
+    src: "/blog/aeo-strategies-for-startups-cover.webp",
+    alt: "Wildflowers in the foreground of a meadow with a wooden gate on a path to a village, under the title 7 AEO strategies for startups",
   },
   takeaways: [
     "Startups can compete in AI answers because engines reward clarity, specificity and corroboration, not just size.",

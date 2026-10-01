@@ -14,8 +14,8 @@ export const aeoVsSeo: Post = {
   dateModified: "2026-10-02",
   readMinutes: 9,
   cover: {
-    src: "/blog/aeo-vs-seo-cover.svg",
-    alt: "Two overlapping circles labelled SEO and AEO on a dark green grid, with the overlap marked as shared foundations",
+    src: "/blog/aeo-vs-seo-cover.webp",
+    alt: "Sunlit green countryside with a winding dirt path leading through a wooden gate to a village, under the title AEO vs SEO",
   },
   takeaways: [
     "SEO aims to rank your pages in search results. AEO aims to get your brand quoted and cited inside AI-generated answers.",

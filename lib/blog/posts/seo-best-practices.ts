@@ -14,8 +14,8 @@ export const seoBestPractices: Post = {
   dateModified: "2026-10-02",
   readMinutes: 11,
   cover: {
-    src: "/blog/seo-best-practices-cover.svg",
-    alt: "A stack of three layers labelled foundation, authority and adaptation on a dark green grid, representing layered SEO best practices",
+    src: "/blog/seo-best-practices-cover.webp",
+    alt: "Rolling green hills and a stone village beside a large oak tree, under the title 10 SEO best practices for Google and AI search",
   },
   takeaways: [
     "SEO best practices still start with search intent, useful content, technical access and trust. What changed is that those signals are now judged by Google and by AI engines at once.",

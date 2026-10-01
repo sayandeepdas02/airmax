@@ -14,8 +14,8 @@ export const whatIsAeo: Post = {
   dateModified: "2026-10-02",
   readMinutes: 8,
   cover: {
-    src: "/blog/what-is-answer-engine-optimization-cover.svg",
-    alt: "A question bubble flowing into a glowing answer card with source links on a dark green grid, illustrating answer engine optimization",
+    src: "/blog/what-is-answer-engine-optimization-cover.webp",
+    alt: "A village with a small church on a green hillside above a winding path, under the title What is Answer Engine Optimization",
   },
   takeaways: [
     "AEO is the practice of structuring content and brand signals so answer engines can understand, trust and cite you in direct answers.",

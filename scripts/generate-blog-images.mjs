@@ -1,4 +1,4 @@
-// Generates the on-brand SVG covers and diagrams in public/blog.  Run: node scripts/generate-blog-images.mjs
+// Generates the on-brand SVG diagrams in public/blog (covers: generate-blog-covers.mjs).  Run: node scripts/generate-blog-images.mjs
 import { writeFileSync, mkdirSync } from "node:fs";
 
 const C = { bg: "#060e0e", line: "#1f3638", green: "#10b261", neon: "#00f57b", text: "#f6f9f7", mute: "#8fa5a0", card: "#0b1919", cyan: "#11474a", jungle: "#0c3126" };
@@ -29,37 +29,6 @@ ${body}
 </svg>
 `;
 }
-
-/* ---------- Covers: tag + title lines on the left, motif on the right ---------- */
-function cover(slug, category, lines, alt, motif) {
-  const body = `
-${rect(72, 72, 190, 40, { r: 20, fill: C.jungle, stroke: C.green })}
-${text(167, 99, category.toUpperCase(), { size: 15, weight: 600, fill: C.neon, anchor: "middle" })}
-${lines.map((l, i) => text(72, 250 + i * 72, l, { size: 60, weight: 600 })).join("\n")}
-${text(72, 560, "AirMax", { size: 30, weight: 700 })}
-${text(168, 560, "AEO agency for startups", { size: 22, fill: C.mute })}
-<g transform="translate(700 130)">${motif}</g>`;
-  writeFileSync(`public/blog/${slug}-cover.svg`, frame(1200, 630, lines.join(" "), alt, body));
-}
-
-const circles = `<circle cx="150" cy="190" r="140" fill="${C.green}" fill-opacity=".14" stroke="${C.green}" stroke-width="3"/>
-<circle cx="300" cy="190" r="140" fill="${C.neon}" fill-opacity=".10" stroke="${C.neon}" stroke-width="3"/>
-${text(80, 195, "SEO", { size: 40, weight: 700 })}${text(355, 195, "AEO", { size: 40, weight: 700 })}${text(225, 190, "shared", { size: 20, anchor: "middle", fill: C.mute })}${text(225, 214, "foundations", { size: 20, anchor: "middle", fill: C.mute })}`;
-const layers = [0, 1, 2].map((i) => `<rect x="${40 + i * 0}" y="${40 + i * 110}" width="${400 - i * 0}" height="86" rx="14" fill="${[C.jungle, C.card, C.jungle][i]}" stroke="${[C.green, C.cyan, C.neon][i]}" stroke-width="2.5" transform="translate(${(2 - i) * 20} 0)"/>`).join("") +
-  [["Adaptation", 0], ["Authority", 1], ["Foundation", 2]].map(([s, i]) => text(240 + (2 - i) * 20, 92 + i * 110, s, { size: 30, weight: 600, anchor: "middle" })).join("");
-const qa = `${rect(0, 20, 300, 80, { r: 40 })}${text(30, 70, "What is AEO?", { size: 30 })}
-<path d="M150 100V150" stroke="${C.green}" stroke-width="3" marker-end="url(#arr)"/>
-${rect(0, 170, 440, 160, { fill: C.jungle, stroke: C.green, sw: 2.5 })}
-<rect x="28" y="198" width="320" height="14" rx="7" fill="url(#grn)"/><rect x="28" y="228" width="380" height="10" rx="5" fill="${C.mute}" opacity=".5"/><rect x="28" y="250" width="350" height="10" rx="5" fill="${C.mute}" opacity=".5"/>
-${["src 1", "src 2", "src 3"].map((s, i) => rect(28 + i * 100, 284, 86, 30, { r: 15, fill: C.card }) + text(71 + i * 100, 305, s, { size: 15, anchor: "middle", fill: C.neon })).join("")}`;
-const pipe = ["Retrieve", "Synthesize", "Cite"].map((s, i) => rect(i * 160, 120, 140, 90, { fill: i === 2 ? C.jungle : C.card, stroke: i === 2 ? C.green : C.cyan, sw: 2 }) + text(70 + i * 160, 172, s, { size: 24, weight: 600, anchor: "middle" }) + (i < 2 ? `<path d="M${142 + i * 160} 165H${158 + i * 160}" stroke="${C.green}" stroke-width="3" marker-end="url(#arr)"/>` : "")).join("");
-const steps = Array.from({ length: 7 }, (_, i) => rect(i * 62, 300 - i * 42, 54, 42 + i * 42, { r: 8, fill: i === 6 ? C.jungle : C.card, stroke: i === 6 ? C.neon : C.cyan, sw: 2 }) + text(27 + i * 62, 332 - i * 42 + 8, String(i + 1), { size: 24, weight: 700, anchor: "middle", fill: i === 6 ? C.neon : C.text }) + "").join("");
-
-cover("aeo-vs-seo", "AEO Fundamentals", ["AEO vs SEO:", "differences &", "how to win both"], "Two overlapping circles labelled SEO and AEO on a dark green grid, with the overlap marked as shared foundations", circles);
-cover("seo-best-practices", "SEO Strategy", ["10 SEO best", "practices for Google", "and AI search"], "A stack of three layers labelled foundation, authority and adaptation on a dark green grid, representing layered SEO best practices", layers);
-cover("what-is-answer-engine-optimization", "AEO Fundamentals", ["What is Answer", "Engine Optimization", "(AEO)?"], "A question bubble flowing into a glowing answer card with source links on a dark green grid, illustrating answer engine optimization", qa);
-cover("what-is-generative-engine-optimization", "GEO", ["What is Generative", "Engine Optimization", "(GEO)?"], "A three-stage pipeline of retrieval, synthesis and citation drawn as connected nodes on a dark green grid, illustrating generative engine optimization", `<g transform="translate(0 40)">${pipe}</g>`);
-cover("aeo-strategies-for-startups", "AEO for Startups", ["7 AEO strategies", "for startups to get", "cited in AI answers"], "A rising staircase of seven steps ending in a highlighted citation card on a dark green grid, representing seven AEO strategies for startups", `<g transform="translate(0 20)">${steps}</g>`);
 
 /* ---------- Figures (1200x560) ---------- */
 function figure(slug, title, alt, body) {
