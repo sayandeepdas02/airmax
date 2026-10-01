@@ -143,18 +143,3 @@ export function SvgDefs() {
     </svg>
   );
 }
-
-export function Stars() {
-  return (
-    <svg width="81" height="13" viewBox="0 0 81 13" fill="none" aria-hidden="true">
-      {[0, 1, 2, 3, 4].map((i) => (
-        <path
-          key={i}
-          transform={`translate(${i * 17} 0)`}
-          d="M6.5.6l1.75 3.66 4.02.52-2.94 2.78.74 3.98L6.5 9.6l-3.57 1.94.74-3.98L.73 4.78l4.02-.52L6.5.6Z"
-          fill="#10B261"
-        />
-      ))}
-    </svg>
-  );
-}

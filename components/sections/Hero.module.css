@@ -38,61 +38,6 @@
   width: 100%;
 }
 
-/* ---------- Social-proof pill ---------- */
-
-.pill {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px 6px 6px;
-  border-radius: 100px;
-  background: var(--deep-jungle);
-}
-
-.pill::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 0.5px solid var(--dark-cyan);
-  border-radius: inherit;
-  pointer-events: none;
-}
-
-.avatars {
-  display: flex;
-  padding-left: 2px;
-}
-
-.avatars span {
-  display: grid;
-  place-items: center;
-  width: 35px;
-  height: 35px;
-  margin-left: -8px;
-  border-radius: 50%;
-  border: 2px solid var(--deep-jungle);
-  color: var(--ink);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.avatars span:first-child {
-  margin-left: 0;
-}
-
-.review {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.reviewRest {
-  color: var(--mint-65);
-  font-weight: 500;
-}
-
 /* ---------- Headline ---------- */
 
 .textWrap {
