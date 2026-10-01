@@ -105,6 +105,7 @@
   text-align: center;
 }
 
+
 .title {
   color: var(--mint);
 }
@@ -116,6 +117,14 @@
 .body {
   max-width: 594px;
   color: var(--mint-65);
+}
+
+/* Wide enough on desktop for the intro copy to sit on exactly two lines */
+@media (min-width: 1200px) {
+  .textWrap,
+  .body {
+    max-width: 860px;
+  }
 }
 
 .ctaWrap {

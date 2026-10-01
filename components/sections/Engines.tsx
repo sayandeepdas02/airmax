@@ -1,5 +1,5 @@
 import { engines } from "@/lib/content";
-import { EngineGlyph } from "@/components/ui/icons";
+import { EngineLogo } from "@/components/ui/engine-logos";
 import { Reveal } from "@/components/motion/Motion";
 import { Ticker } from "@/components/motion/Ticker";
 import styles from "./Engines.module.css";
@@ -16,7 +16,7 @@ export function Engines() {
             <ul className={styles.set}>
               {engines.items.map((e) => (
                 <li key={e.name} className={styles.item}>
-                  <EngineGlyph name={e.glyph} size={22} />
+                  <EngineLogo name={e.logo} size={22} />
                   <span>{e.name}</span>
                 </li>
               ))}

@@ -144,8 +144,14 @@ export function Button({
   );
 
   if (href) {
+    const external = /^https?:\/\//.test(href);
     return (
-      <motion.a ref={ref as React.RefObject<HTMLAnchorElement>} href={href} {...common}>
+      <motion.a
+        ref={ref as React.RefObject<HTMLAnchorElement>}
+        href={href}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        {...common}
+      >
         {label}
       </motion.a>
     );

@@ -143,54 +143,6 @@ export function BenefitIcon({ name, size = 24, ...rest }: IconProps & { name: Be
   return <DrawnSvg shapes={benefitIcons[name]} size={size} strokeWidth={1.6} delay={0.35} {...rest} />;
 }
 
-/* ---------- AI engine glyphs for the logo ticker (generic marks, not trademarks) ---------- */
-
-const engineGlyphs = {
-  hex: (
-    <>
-      <path d="M12 2.8 19.9 7.4v9.2L12 21.2l-7.9-4.6V7.4Z" />
-      <path d="M12 7.6 15.8 9.8v4.4L12 16.4l-3.8-2.2V9.8Z" />
-    </>
-  ),
-  burst: <path d="M12 2.5v19M2.5 12h19M5.3 5.3l13.4 13.4M18.7 5.3 5.3 18.7" />,
-  grid: (
-    <>
-      <path d="M12 2.5v19M4.5 7.5 12 2.5l7.5 5v9l-7.5 5-7.5-5Z" />
-      <path d="M4.5 7.5 12 12l7.5-4.5M12 12v9.5" />
-    </>
-  ),
-  spark: <path d="M12 2.5c.6 5.1 4.4 8.9 9.5 9.5-5.1.6-8.9 4.4-9.5 9.5-.6-5.1-4.4-8.9-9.5-9.5 5.1-.6 8.9-4.4 9.5-9.5Z" />,
-  lens: (
-    <>
-      <circle cx="10.5" cy="10.5" r="7" />
-      <path d="M15.6 15.6 21 21M10.5 7v7M7 10.5h7" />
-    </>
-  ),
-  loop: (
-    <>
-      <path d="M8.5 7.5a4.5 4.5 0 1 0 0 9c2.5 0 4.5-4.5 7-4.5" />
-      <path d="M15.5 16.5a4.5 4.5 0 1 0 0-9c-2.5 0-4.5 4.5-7 4.5" />
-    </>
-  ),
-  search: (
-    <>
-      <circle cx="11" cy="11" r="7.5" />
-      <path d="M16.5 16.5 21.5 21.5" />
-    </>
-  ),
-  wave: <path d="M6 3v13.5l4.5 3 8-4.5-5-2.5-2.5-1" />,
-};
-
-export type EngineGlyphName = keyof typeof engineGlyphs;
-
-export function EngineGlyph({ name, size = 22, ...rest }: IconProps & { name: EngineGlyphName }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true" {...lineProps} {...rest}>
-      {engineGlyphs[name]}
-    </svg>
-  );
-}
-
 /* ---------- UI glyphs ---------- */
 
 export function Chevron({ size = 18, ...rest }: IconProps) {

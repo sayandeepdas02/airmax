@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Instrument_Sans } from "next/font/google";
-import { faq, site } from "@/lib/content";
+import { site } from "@/lib/content";
 import { SvgDefs } from "@/components/ui/primitives";
 import { MotionProvider } from "@/components/motion/Motion";
 import "./globals.css";
@@ -12,7 +12,7 @@ const instrument = Instrument_Sans({
   display: "swap",
 });
 
-const title = "AirMax — SEO & AEO agency for startups";
+const title = "AirMax | AEO Agency for Startups: Get Cited by AI";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -20,8 +20,9 @@ export const metadata: Metadata = {
   description: site.description,
   alternates: { canonical: "/" },
   keywords: [
-    "SEO agency for startups",
+    "AEO agency for startups",
     "AEO agency",
+    "SEO agency for startups",
     "answer engine optimization",
     "generative engine optimization",
     "AI search optimization",
@@ -55,6 +56,7 @@ const jsonLd = {
       url: site.url,
       email: site.email,
       description: site.description,
+      slogan: "AEO visibility for ambitious startups.",
       areaServed: "Worldwide",
       knowsAbout: [
         "Search engine optimization",
@@ -72,14 +74,6 @@ const jsonLd = {
       name: site.name,
       publisher: { "@id": `${site.url}/#organization` },
     },
-    {
-      "@type": "FAQPage",
-      mainEntity: faq.items.map((item) => ({
-        "@type": "Question",
-        name: item.q,
-        acceptedAnswer: { "@type": "Answer", text: item.a },
-      })),
-    },
   ],
 };
 
@@ -88,6 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={instrument.variable} suppressHydrationWarning>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site guide" />
       </head>
       <body>
         <SvgDefs />

@@ -4,31 +4,33 @@
 export const site = {
   name: "AirMax",
   url: "https://airmax.agency", // TODO: confirm production domain
-  email: "hello@airmax.agency", // TODO: confirm inbox
-  bookingUrl: "#contact",
-  tagline: "SEO & AEO for startups that want to be found — on Google and in every AI answer.",
+  email: "sayan@airmax.agency",
+  bookingUrl: "https://calendly.com/reachsayandeep/30mins-with-sayandeep",
+  auditLabel: "Book a Free AEO Audit",
+  tagline: "The AEO agency that helps startups maximise their visibility in AI answers.",
   description:
-    "AirMax is the SEO and AEO agency for startups. We grow your Google rankings and get your brand cited in ChatGPT, Claude, Perplexity, Gemini and Google AI Overviews.",
+    "AirMax is the answer engine optimization (AEO) agency for startups. We maximise your visibility in ChatGPT, Claude, Perplexity, Gemini and Google AI Overviews, on top of SEO foundations that compound.",
 };
 
 export const nav = {
   links: [
     {
       label: "Services",
-      href: "#services",
+      href: "/#services",
       children: [
-        { label: "SEO", href: "#services", note: "Rank on Google" },
-        { label: "AEO / AI search", href: "#services", note: "Get cited by AI" },
-        { label: "Technical SEO", href: "#capabilities", note: "Speed, crawl, schema" },
-        { label: "Content & digital PR", href: "#capabilities", note: "Earn mentions" },
+        { label: "AEO / AI search", href: "/#services", note: "Get cited by AI" },
+        { label: "SEO foundations", href: "/#services", note: "Rank on Google" },
+        { label: "Technical SEO & schema", href: "/#capabilities", note: "Speed, crawl, entities" },
+        { label: "Content & digital PR", href: "/#capabilities", note: "Earn mentions" },
       ],
     },
-    { label: "Capabilities", href: "#capabilities" },
-    { label: "Process", href: "#process" },
-    { label: "Why AirMax", href: "#why-airmax" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Capabilities", href: "/#capabilities" },
+    { label: "Process", href: "/#process" },
+    { label: "Why AirMax", href: "/#why-airmax" },
+    { label: "Blog", href: "/blog" },
+    { label: "FAQ", href: "/#faq" },
   ],
-  cta: { label: "Free AI audit", href: "#contact" },
+  cta: { label: site.auditLabel, href: site.bookingUrl },
 };
 
 export const hero = {
@@ -36,47 +38,48 @@ export const hero = {
   titleBefore: "Make your startup the",
   titleAccent: "answer",
   titleAfter: "AI recommends",
-  body: "AirMax is the SEO & AEO agency for startups. We grow your Google rankings and get your brand cited in ChatGPT, Claude, Perplexity and Gemini.",
-  cta: { label: "Get your free AI audit", href: "#contact" },
-  features: ["Built for startups", "SEO + AEO in one plan", "Weekly AI visibility reports"],
+  body: "AirMax is the AEO agency for startups. We maximise your visibility in ChatGPT, Claude, Perplexity, Gemini and Google AI Overviews, so you are the brand buyers hear about first.",
+  cta: { label: site.auditLabel, href: site.bookingUrl },
+  features: ["AEO-first, built for startups", "Cited in answers, not just ranked", "Weekly AI visibility reports"],
 };
 
 export const engines = {
   title: "Get cited in the AI engines your buyers already ask",
+  // Order alternates so the two Google marks (Gemini, AI Overviews) never sit side by side.
   items: [
-    { name: "ChatGPT", glyph: "hex" },
-    { name: "Claude", glyph: "burst" },
-    { name: "Perplexity", glyph: "grid" },
-    { name: "Gemini", glyph: "spark" },
-    { name: "AI Overviews", glyph: "lens" },
-    { name: "Copilot", glyph: "loop" },
-    { name: "Google Search", glyph: "search" },
-    { name: "Bing", glyph: "wave" },
+    { name: "ChatGPT", logo: "openai" },
+    { name: "Gemini", logo: "gemini" },
+    { name: "Claude", logo: "claude" },
+    { name: "Google AI Overviews", logo: "gemini" },
+    { name: "Perplexity", logo: "perplexity" },
+    { name: "Microsoft Copilot", logo: "copilot" },
+    { name: "Google Search", logo: "google" },
+    { name: "Bing", logo: "bing" },
   ],
 } as const;
 
 export const services = {
   pill: "Services",
-  title: "Rank on Google. Get cited by AI.",
-  body: "Your next customer might never see a results page. We make sure you win the click and the answer.",
+  title: "Maximise your visibility where buyers now ask",
+  body: "Your next customer may never open a results page. They ask an AI and trust the answer. We make sure that answer is you.",
   cards: [
-    {
-      icon: "search",
-      title: "SEO that compounds",
-      body: "Technical fixes, keyword strategy and content that climbs Google and keeps climbing, built around how startups actually grow.",
-      features: ["Technical SEO audits", "Keyword & content strategy", "Link building & digital PR"],
-    },
     {
       icon: "chat",
       title: "AEO for AI answers",
-      body: "We structure your content, entities and brand mentions so ChatGPT, Claude, Perplexity and Gemini cite you when buyers ask.",
+      body: "We restructure your content, entities and brand mentions so ChatGPT, Claude, Perplexity and Gemini cite you when buyers ask for a recommendation.",
       features: ["LLM citation optimization", "Entity & schema markup", "Google AI Overviews"],
     },
     {
+      icon: "search",
+      title: "SEO foundations that feed AI",
+      body: "Answer engines lean on the same signals Google trusts: crawlable pages, topical depth and authority. We build them once and win in both places.",
+      features: ["Technical SEO audits", "Topic clusters & content", "Digital PR & link building"],
+    },
+    {
       icon: "chart",
-      title: "Tracking & reporting",
-      body: "See exactly where you show up: rankings, AI citations, share of answer and signups, all in one live dashboard.",
-      features: ["AI visibility tracking", "Share-of-answer benchmarks", "Monthly growth reviews"],
+      title: "AI visibility tracking",
+      body: "See exactly where you appear: citations, share of answer, rankings and signups, in one live dashboard that shows what is working.",
+      features: ["Prompt-level citation tracking", "Share-of-answer benchmarks", "Monthly growth reviews"],
     },
   ],
 } as const;
@@ -167,8 +170,8 @@ export const process = {
 
 export const compare = {
   pill: "The difference",
-  title: "Not your typical SEO agency",
-  body: "Traditional SEO stops at the results page. AirMax covers the answer, too.",
+  title: "Built for answer engines, not just search engines",
+  body: "Traditional SEO stops at the results page. AirMax starts there and goes on to win the answer.",
   columns: ["Traditional SEO agency", "AirMax"],
   rows: [
     { label: "Google rankings & organic traffic", them: "yes", us: "yes" },
@@ -214,8 +217,8 @@ export const faq = {
   body: "Everything founders ask us before they start, from AEO basics to timelines and what we can (and can't) promise.",
   aside: {
     title: "Still have questions?",
-    body: "Book a 20-minute call and we'll walk through your current Google and AI visibility, live.",
-    cta: "Book a call",
+    body: "Book a free AEO audit call and we'll walk through your current AI and Google visibility, live.",
+    cta: site.auditLabel,
   },
   items: [
     {
@@ -244,43 +247,48 @@ export const faq = {
     },
     {
       q: "How is AirMax different from other SEO agencies?",
-      a: "We are built for the AI search era. Every engagement pairs classic SEO with AEO, and we report on AI citations and share of answer alongside rankings and traffic.",
+      a: "We are an AEO agency first. Our job is to maximise how often and how well your startup is cited in AI answers, and we back it with the SEO foundations that make those citations stick. We report on AI citations and share of answer alongside rankings and traffic.",
+    },
+    {
+      q: "What happens in the free AEO audit?",
+      a: "On a 30-minute call we check how ChatGPT, Perplexity, Gemini and Google AI Overviews currently describe your brand, which prompts your competitors win, and the three fixes most likely to move your citations. There is no obligation to hire us.",
     },
   ],
 };
 
 export const cta = {
   title: "Turn AI search into your next growth channel",
-  body: "Get a free AI visibility audit: where you rank on Google today, and how often ChatGPT, Perplexity and Gemini mention you.",
-  button: { label: "Get your free audit", href: "#contact" },
+  body: "Book a free AEO audit: see how often ChatGPT, Perplexity and Gemini mention you today, and the quickest way to get cited more.",
+  button: { label: site.auditLabel, href: site.bookingUrl },
 };
 
 export const footer = {
-  blurb: "Search visibility for ambitious startups.",
+  blurb: "AEO visibility for ambitious startups.",
   columns: [
     {
       title: "Company",
       links: [
-        { label: "Capabilities", href: "#capabilities" },
-        { label: "Process", href: "#process" },
-        { label: "Why AirMax", href: "#why-airmax" },
-        { label: "FAQ", href: "#faq" },
+        { label: "Capabilities", href: "/#capabilities" },
+        { label: "Process", href: "/#process" },
+        { label: "Why AirMax", href: "/#why-airmax" },
+        { label: "Blog", href: "/blog" },
+        { label: "FAQ", href: "/#faq" },
       ],
     },
     {
       title: "Services",
       links: [
-        { label: "SEO", href: "#services" },
-        { label: "AEO / AI search", href: "#services" },
-        { label: "Technical SEO", href: "#services" },
-        { label: "Content & PR", href: "#services" },
+        { label: "AEO / AI search", href: "/#services" },
+        { label: "SEO foundations", href: "/#services" },
+        { label: "Technical SEO & schema", href: "/#capabilities" },
+        { label: "Content & PR", href: "/#capabilities" },
       ],
     },
   ],
   contact: {
     title: "Contact",
     email: site.email,
-    call: { label: "Book a strategy call", href: site.bookingUrl },
+    call: { label: site.auditLabel, href: site.bookingUrl },
   },
   social: [
     { label: "X", href: "https://x.com/", icon: "x" },
@@ -289,7 +297,7 @@ export const footer = {
     { label: "YouTube", href: "https://www.youtube.com/", icon: "youtube" },
   ], // TODO: point to AirMax profiles
   legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Service", href: "/terms-of-service" },
   ],
 } as const;

@@ -3,7 +3,7 @@
 import { AnimatePresence, motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { LogoMark } from "@/components/ui/primitives";
-import { EngineGlyph, type EngineGlyphName } from "@/components/ui/icons";
+import { EngineLogo, type EngineLogoName } from "@/components/ui/engine-logos";
 import { CountUp, EASE_OUT } from "@/components/motion/Motion";
 import styles from "./Dashboard.module.css";
 
@@ -27,32 +27,32 @@ const SERIES = [
   { name: "Gemini", color: "#8BD9B0", data: [4, 5, 7, 9, 10, 12, 15, 17, 20, 23, 26, 31] },
 ];
 
-const SHARE: { name: string; glyph: EngineGlyphName; pct: number }[] = [
-  { name: "ChatGPT", glyph: "hex", pct: 41 },
-  { name: "Perplexity", glyph: "grid", pct: 27 },
-  { name: "AI Overviews", glyph: "lens", pct: 18 },
-  { name: "Gemini", glyph: "spark", pct: 9 },
-  { name: "Claude", glyph: "burst", pct: 5 },
+const SHARE: { name: string; glyph: EngineLogoName; pct: number }[] = [
+  { name: "ChatGPT", glyph: "openai", pct: 41 },
+  { name: "Perplexity", glyph: "perplexity", pct: 27 },
+  { name: "AI Overviews", glyph: "gemini", pct: 18 },
+  { name: "Gemini", glyph: "gemini", pct: 9 },
+  { name: "Claude", glyph: "claude", pct: 5 },
 ];
 
-const FEED: { engine: string; glyph: EngineGlyphName; prompt: string; quote: [string, string]; rank: string }[] = [
+const FEED: { engine: string; glyph: EngineLogoName; prompt: string; quote: [string, string]; rank: string }[] = [
   {
     engine: "Perplexity",
-    glyph: "grid",
+    glyph: "perplexity",
     prompt: "best payroll API for startups",
     quote: ["“For early-stage teams, ", " is frequently recommended because its API is quick to integrate and priced for startups…”"],
     rank: "#1",
   },
   {
     engine: "ChatGPT",
-    glyph: "hex",
+    glyph: "openai",
     prompt: "gusto alternatives for developers",
     quote: ["“Developer-led teams often shortlist ", " for its clean API, sandbox and transparent per-seat pricing…”"],
     rank: "#2",
   },
   {
     engine: "AI Overviews",
-    glyph: "lens",
+    glyph: "gemini",
     prompt: "how to run payroll via API",
     quote: ["“Platforms such as ", " let you create pay runs with a single API call and handle tax filings automatically…”"],
     rank: "#1",
@@ -285,7 +285,7 @@ export function Dashboard() {
               {SHARE.map((s, i) => (
                 <li key={s.name}>
                   <span className={styles.shareIcon}>
-                    <EngineGlyph name={s.glyph} size={13} />
+                    <EngineLogo name={s.glyph} size={13} />
                   </span>
                   <span className={styles.shareMain}>
                     <span className={styles.shareTop}>
@@ -320,7 +320,7 @@ export function Dashboard() {
               transition={{ duration: 0.45, ease: EASE_OUT }}
             >
               <span className={styles.feedIcon}>
-                <EngineGlyph name={item.glyph} size={16} />
+                <EngineLogo name={item.glyph} size={16} />
               </span>
               <div className={styles.feedBody}>
                 <span className={styles.feedMeta}>
