@@ -4,7 +4,7 @@
 export const site = {
   name: "AirMax",
   url: "https://airmax.agency", // TODO: confirm production domain
-  email: "hello@airmax.agency", // TODO: confirm inbox
+  email: "sayan@airmax.agency",
   bookingUrl: "https://calendly.com/reachsayandeep/30mins-with-sayandeep",
   auditLabel: "Book a Free AEO Audit",
   tagline: "The AEO agency that helps startups maximise their visibility in AI answers.",
@@ -45,15 +45,16 @@ export const hero = {
 
 export const engines = {
   title: "Get cited in the AI engines your buyers already ask",
+  // Order alternates so the two Google marks (Gemini, AI Overviews) never sit side by side.
   items: [
-    { name: "ChatGPT", glyph: "hex" },
-    { name: "Claude", glyph: "burst" },
-    { name: "Perplexity", glyph: "grid" },
-    { name: "Gemini", glyph: "spark" },
-    { name: "AI Overviews", glyph: "lens" },
-    { name: "Copilot", glyph: "loop" },
-    { name: "Google Search", glyph: "search" },
-    { name: "Bing", glyph: "wave" },
+    { name: "ChatGPT", logo: "openai" },
+    { name: "Gemini", logo: "gemini" },
+    { name: "Claude", logo: "claude" },
+    { name: "Google AI Overviews", logo: "gemini" },
+    { name: "Perplexity", logo: "perplexity" },
+    { name: "Microsoft Copilot", logo: "copilot" },
+    { name: "Google Search", logo: "google" },
+    { name: "Bing", logo: "bing" },
   ],
 } as const;
 

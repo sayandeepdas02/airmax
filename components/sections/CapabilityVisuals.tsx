@@ -4,7 +4,7 @@ import { AnimatePresence, animate, motion, useInView } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { capabilities } from "@/lib/content";
 import { CountUp, EASE_OUT } from "@/components/motion/Motion";
-import { EngineGlyph, type EngineGlyphName } from "@/components/ui/icons";
+import { EngineLogo, type EngineLogoName } from "@/components/ui/engine-logos";
 import styles from "./Capabilities.module.css";
 
 const spring = { type: "spring", stiffness: 320, damping: 24 } as const;
@@ -14,7 +14,7 @@ const spring = { type: "spring", stiffness: 320, damping: 24 } as const;
       then the cited sources pop in.
    ========================================================================== */
 
-const GLYPHS: Record<string, EngineGlyphName> = { ChatGPT: "hex", Perplexity: "grid", Gemini: "spark" };
+const LOGOS: Record<string, EngineLogoName> = { ChatGPT: "openai", Perplexity: "perplexity", Gemini: "gemini" };
 
 function Typed({ text, highlight, run, onDone }: { text: string; highlight: string; run: boolean; onDone: () => void }) {
   const [n, setN] = useState(0);
@@ -94,7 +94,7 @@ export function AnswerDemo() {
               }}
             >
               {i === active && <motion.span layoutId="engine-pill" className={styles.tabPill} transition={spring} />}
-              <EngineGlyph name={GLYPHS[e.name]} size={13} />
+              <EngineLogo name={LOGOS[e.name]} size={13} />
               <span>{e.name}</span>
             </button>
           ))}
@@ -113,7 +113,7 @@ export function AnswerDemo() {
 
         <div className={styles.aiMsg}>
           <span className={styles.aiIcon}>
-            <EngineGlyph name={GLYPHS[engine.name]} size={15} />
+            <EngineLogo name={LOGOS[engine.name]} size={15} />
           </span>
           <div className={styles.aiContent}>
             <AnimatePresence mode="wait">
